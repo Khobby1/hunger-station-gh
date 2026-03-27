@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hunger Station Gh — Where Taste Meets Speed</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#090909;--gold:#C9A84C;--gold-light:#E8C96A;--gold-dim:rgba(201,168,76,0.15);--cream:#F0EAD6;--cream-dim:rgba(240,234,214,0.7);--red:#7A1010;--white:#FAFAF8;--glass:rgba(255,255,255,0.03);--gb:rgba(201,168,76,0.2)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--cream);font-family:'Poppins',sans-serif;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.35}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(9,9,9,0.95),transparent);transition:all 0.4s}
+nav.sc{background:rgba(9,9,9,0.97);border-bottom:1px solid var(--gb);padding:1rem 4rem}
+.nl{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--gold);text-decoration:none}
+.nl span{color:var(--cream)}
+.nls{display:flex;gap:2.5rem;list-style:none}
+.nls a{color:var(--cream-dim);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.3s}
+.nls a:hover{color:var(--gold)}
+.nc{background:var(--gold);color:var(--black)!important;padding:0.55rem 1.4rem;border-radius:2px;font-weight:600!important}
+
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:8rem 4rem 5rem}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(122,16,16,.25),transparent 60%),radial-gradient(ellipse 50% 40% at 20% 80%,rgba(201,168,76,.08),transparent 55%)}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);animation:fl 8s ease-in-out infinite}
+.o1{width:500px;height:500px;background:var(--red);top:-100px;right:-100px;opacity:.15}
+.o2{width:300px;height:300px;background:var(--gold);bottom:10%;left:5%;opacity:.08;animation-delay:-3s}
+@keyframes fl{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+.hc{position:relative;z-index:2;max-width:750px;animation:hr 1.2s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes hr{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.hbadge{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold-dim);border:1px solid var(--gb);color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:2px;margin-bottom:2rem}
+.hbadge::before{content:'★';animation:pu 2s ease-in-out infinite}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.5}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,7vw,6rem);font-weight:900;line-height:1;letter-spacing:-.02em;margin-bottom:1.6rem;color:var(--white)}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hs{font-size:1.05rem;font-weight:300;color:var(--cream-dim);line-height:1.75;max-width:520px;margin-bottom:3rem}
+.hct{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.bp{background:var(--gold);color:var(--black);border:none;padding:1rem 2.2rem;font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden}
+.bp::before{content:'';position:absolute;inset:0;background:var(--gold-light);transform:translateX(-100%);transition:transform .3s}
+.bp:hover::before{transform:translateX(0)}
+.bp span{position:relative;z-index:1}
+.bp:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,168,76,.35)}
+.bg{background:transparent;color:var(--cream);border:1px solid rgba(240,234,214,.25);padding:1rem 2.2rem;font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s}
+.bg:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.ht{display:flex;align-items:center;gap:.75rem;font-size:.78rem;color:rgba(240,234,214,.5)}
+.st{color:var(--gold)}
+.hr2{position:absolute;right:0;top:0;bottom:0;width:45%;display:flex;align-items:center;justify-content:center}
+.hp{position:relative;width:420px;height:420px;animation:hpl 1.4s cubic-bezier(.16,1,.3,1) .2s both}
+@keyframes hpl{from{opacity:0;transform:scale(.8) rotate(-5deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.pg{position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.2),transparent 70%);animation:pgl 3s ease-in-out infinite}
+@keyframes pgl{0%,100%{opacity:.6}50%{opacity:1}}
+.pe{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:15rem;filter:drop-shadow(0 20px 60px rgba(0,0,0,.8))}
+.ft{position:absolute;background:rgba(9,9,9,.9);border:1px solid var(--gb);backdrop-filter:blur(12px);border-radius:4px;padding:.8rem 1.2rem;font-size:.75rem;animation:flt 4s ease-in-out infinite}
+.ft:nth-child(3){top:15%;left:-30px}
+.ft:nth-child(4){bottom:20%;right:-20px;animation-delay:-2s}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.tl{color:var(--gold);font-weight:600;display:block}
+.ts{color:var(--cream-dim);margin-top:.1rem}
+
+section{padding:7rem 4rem}
+.sl{display:inline-flex;align-items:center;gap:.8rem;color:var(--gold);font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;margin-bottom:1.2rem}
+.sl::before{content:'';display:block;width:30px;height:1px;background:var(--gold)}
+.stit{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--white);margin-bottom:1.2rem}
+.stit em{font-style:italic;color:var(--gold)}
+
+.feats{background:linear-gradient(135deg,rgba(122,16,16,.08),transparent 50%);border-top:1px solid var(--gb);border-bottom:1px solid var(--gb)}
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1100px;margin:4rem auto 0}
+.fc{padding:3rem 2.5rem;border-right:1px solid var(--gb);position:relative;transition:all .4s}
+.fc:last-child{border-right:none}
+.fc::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.fc:hover::before{transform:scaleX(1)}
+.fc:hover{background:var(--gold-dim)}
+.fi{font-size:2rem;margin-bottom:1.5rem;display:block}
+.fc h3{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--white);margin-bottom:.75rem}
+.fc p{font-size:.88rem;color:var(--cream-dim);line-height:1.75;font-weight:300}
+
+.dishes{max-width:1200px;margin:0 auto}
+.dh{text-align:center;margin-bottom:4rem}
+.dg{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:repeat(2,280px);gap:2px}
+.dc{position:relative;overflow:hidden;cursor:pointer;background:#111}
+.dc:first-child{grid-row:1/3}
+.db{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:8rem;transition:transform .6s cubic-bezier(.34,1.56,.64,1);filter:saturate(.7)}
+.dc:first-child .db{font-size:13rem}
+.dc:hover .db{transform:scale(1.1);filter:saturate(1)}
+.do{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.2) 60%,transparent)}
+.di{position:absolute;bottom:0;left:0;right:0;padding:1.8rem;transform:translateY(10px);transition:transform .4s}
+.dc:hover .di{transform:translateY(0)}
+.dt{background:var(--gold);color:var(--black);font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.25rem .7rem;border-radius:1px;display:inline-block;margin-bottom:.6rem}
+.di h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:.4rem;line-height:1.2}
+.dc:first-child .di h3{font-size:2rem}
+.di p{font-size:.8rem;color:var(--cream-dim);line-height:1.6;font-weight:300;opacity:0;transition:opacity .3s .1s}
+.dc:hover .di p{opacity:1}
+.dct{text-align:center;margin-top:3rem}
+.lg{color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;transition:gap .3s}
+.lg:hover{gap:1rem}
+
+.revs{background:#060606;border-top:1px solid var(--gb)}
+.ri{max-width:1100px;margin:0 auto}
+.rh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1rem}
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.rc{background:#0D0D0D;padding:2.5rem;transition:transform .3s}
+.rc:hover{transform:translateY(-4px)}
+.rst{color:var(--gold);font-size:.85rem;letter-spacing:.15em;margin-bottom:1.2rem}
+.rq{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--cream);line-height:1.7;margin-bottom:1.5rem;position:relative}
+.rq::before{content:'\201C';font-size:4rem;color:var(--gold);opacity:.2;position:absolute;top:-1rem;left:-.5rem;font-family:'Playfair Display',serif;line-height:1}
+.rv{display:flex;align-items:center;gap:.8rem}
+.ra{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--red));display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--black);flex-shrink:0}
+.rn{font-size:.82rem;font-weight:600;color:var(--gold);letter-spacing:.05em}
+
+.os{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.ov{position:relative;height:480px;display:flex;align-items:center;justify-content:center}
+.oc{width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(122,16,16,.3),transparent 70%);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:10rem;animation:rg2 6s linear infinite}
+@keyframes rg2{0%,100%{box-shadow:0 0 40px rgba(201,168,76,.1)}50%{box-shadow:0 0 80px rgba(201,168,76,.2)}}
+.otg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:rgba(240,234,214,.5);margin-bottom:2.5rem}
+.steps{display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2.5rem}
+.step{display:flex;align-items:flex-start;gap:1.25rem}
+.sn{width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--gold);flex-shrink:0}
+.st2 h4{font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:.25rem}
+.st2 p{font-size:.82rem;color:var(--cream-dim);font-weight:300}
+
+.whs{background:linear-gradient(135deg,rgba(201,168,76,.05),transparent 50%);border-top:1px solid var(--gb)}
+.wi{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.wl{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem}
+.wli{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.5rem;background:var(--glass);border:1px solid var(--gb);border-radius:2px;font-size:.88rem;color:var(--cream);transition:all .3s}
+.wli:hover{background:var(--gold-dim);border-color:var(--gold);transform:translateX(6px)}
+.wc{color:var(--gold);font-size:1rem;flex-shrink:0}
+.wns{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.wn{text-align:center;padding:2.5rem;border:1px solid var(--gb)}
+.bn{font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;color:var(--gold);display:block;line-height:1;margin-bottom:.3rem}
+.bnl{font-size:.72rem;color:var(--cream-dim);letter-spacing:.15em;text-transform:uppercase}
+
+.cta{text-align:center;background:linear-gradient(135deg,rgba(122,16,16,.15),rgba(9,9,9,0) 50%,rgba(201,168,76,.05));border-top:1px solid var(--gb);position:relative;overflow:hidden}
+.cta::before{content:'H';font-family:'Playfair Display',serif;font-size:30rem;font-weight:900;color:rgba(201,168,76,.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cin{position:relative;z-index:2;max-width:700px;margin:0 auto}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:1.2rem}
+.cta h2 em{font-style:italic;color:var(--gold)}
+.cta p{color:var(--cream-dim);font-size:1rem;font-weight:300;margin-bottom:3rem;line-height:1.75}
+.ctab{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.bco{background:transparent;color:var(--cream);border:1px solid rgba(240,234,214,.2);padding:1rem 2rem;font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;transition:all .3s}
+.bco:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+footer{padding:3rem 4rem;border-top:1px solid var(--gb);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.flo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--gold)}
+.flo span{color:var(--cream-dim);font-weight:400}
+.fltag{font-size:.75rem;color:rgba(240,234,214,.35);letter-spacing:.08em;margin-top:.3rem}
+.fll{display:flex;gap:2rem;list-style:none}
+.fll a{color:rgba(240,234,214,.4);text-decoration:none;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;transition:color .3s}
+.fll a:hover{color:var(--gold)}
+.fco{font-size:.7rem;color:rgba(240,234,214,.25);text-align:right}
+
+.so{position:fixed;bottom:2rem;right:2rem;z-index:800;background:var(--gold);color:var(--black);border:none;padding:.9rem 1.8rem;font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;display:flex;align-items:center;gap:.6rem;box-shadow:0 8px 30px rgba(201,168,76,.4);transition:all .3s cubic-bezier(.34,1.56,.64,1);animation:sis .6s 1s both;text-decoration:none}
+@keyframes sis{from{transform:translateY(100px);opacity:0}to{transform:translateY(0);opacity:1}}
+.so:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(201,168,76,.5);background:var(--gold-light)}
+
+.div{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim) 50%,transparent);margin:0 4rem}
+
+.clr{height:1px;background:var(--gb);margin:0 4rem}
+
+@media(max-width:900px){
+nav{padding:1.2rem 2rem}nav.sc{padding:.8rem 2rem}.nls{display:none}
+section{padding:5rem 2rem}.hero{padding:7rem 2rem 4rem}.hr2{display:none}
+.fg{grid-template-columns:1fr}.fc{border-right:none;border-bottom:1px solid var(--gb)}
+.dg{grid-template-columns:1fr;grid-template-rows:auto}.dc{height:220px}.dc:first-child{grid-row:auto}.db{font-size:6rem!important}
+.rg{grid-template-columns:1fr}
+.os{grid-template-columns:1fr;gap:3rem}.ov{height:250px}
+.wi{grid-template-columns:1fr;gap:3rem}.wns{grid-template-columns:repeat(2,1fr)}
+footer{flex-direction:column;align-items:flex-start}.fco{text-align:left}
+.div,.clr{margin:0 2rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="nb">
+  <a href="#" class="nl">Hunger<span> Station Gh</span></a>
+  <ul class="nls">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#order">How It Works</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nc">Order Now</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hbg"></div>
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="hc">
+    <div class="hbadge">Accra's Premium Food Destination</div>
+    <h1>Eat Like<br><em>Royalty.</em><br>Delivered Fast.</h1>
+    <p class="hs">Premium Ghanaian meals, zero delays, unforgettable taste. From smoky jollof to gourmet pizza — we deliver excellence, every time.</p>
+    <div class="hct">
+      <a href="#contact" class="bp"><span>🍽 Order Now</span></a>
+      <a href="#menu" class="bg">View Menu →</a>
+    </div>
+    <div class="ht">
+      <span class="st">★★★★★</span>
+      <span>Loved for fast delivery, great service & irresistible taste</span>
+    </div>
+  </div>
+  <div class="hr2">
+    <div class="hp">
+      <div class="pg"></div>
+      <div class="pe">🍛</div>
+      <div class="ft"><span class="tl">⚡ Fast Delivery</span><span class="ts">Hot & on time, always</span></div>
+      <div class="ft"><span class="tl">★ 5.0 Rated</span><span class="ts">By real customers</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="feats" id="features">
+  <div style="max-width:1100px;margin:0 auto;text-align:center">
+    <div class="sl" style="justify-content:center"><span style="display:block;width:30px;height:1px;background:var(--gold)"></span>Why They Keep Coming Back<span style="display:block;width:30px;height:1px;background:var(--gold)"></span></div>
+    <div class="stit">Built on Three <em>Pillars</em></div>
+  </div>
+  <div class="fg">
+    <div class="fc"><span class="fi">⚡</span><h3>No Delays</h3><p>Your food arrives hot, fresh, and right on time. Speed isn't a bonus here — it's a standard we never compromise.</p></div>
+    <div class="fc"><span class="fi">❤️</span><h3>Exceptional Service</h3><p>We treat every order like it matters — because it does. Real care, real people, real results every single time.</p></div>
+    <div class="fc"><span class="fi">🍲</span><h3>Premium Taste</h3><p>From rich jollof to loaded pizza, every bite hits different. Crafted with passion, delivered with pride.</p></div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section id="menu">
+  <div class="dishes">
+    <div class="dh">
+      <div class="sl" style="justify-content:center"><span style="display:block;width:30px;height:1px;background:var(--gold)"></span>Signature Dishes<span style="display:block;width:30px;height:1px;background:var(--gold)"></span></div>
+      <div class="stit">Food That Makes You <em>Come Back</em></div>
+    </div>
+    <div class="dg">
+      <div class="dc"><div class="db">🍛</div><div class="do"></div><div class="di"><span class="dt">Fan Favourite</span><h3>Jollof + Beef Sauce</h3><p>Rich, smoky jollof paired with deeply seasoned beef sauce. The combo that built our reputation.</p></div></div>
+      <div class="dc"><div class="db">🍕</div><div class="do"></div><div class="di"><span class="dt">Customer Love</span><h3>Gourmet Pizza</h3><p>Crispy crust, loaded toppings, unforgettable in every slice.</p></div></div>
+      <div class="dc"><div class="db">🥘</div><div class="do"></div><div class="di"><span class="dt">Local Pride</span><h3>Local Specials</h3><p>The best of Ghanaian comfort food, elevated.</p></div></div>
+      <div class="dc"><div class="db">🍗</div><div class="do"></div><div class="di"><span class="dt">Continental</span><h3>Grilled Perfection</h3><p>Tender, marinated, grilled to order.</p></div></div>
+      <div class="dc"><div class="db">🥗</div><div class="do"></div><div class="di"><span class="dt">Sides</span><h3>Sides & More</h3><p>Complete your meal with premium extras.</p></div></div>
+    </div>
+    <div class="dct"><a href="#contact" class="lg">Explore Full Menu & Order →</a></div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="revs" id="reviews">
+  <div class="ri">
+    <div class="rh">
+      <div>
+        <div class="sl">What Customers Say</div>
+        <div class="stit">Real Words.<br><em>Real Satisfaction.</em></div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:3rem;font-family:'Playfair Display',serif;font-weight:900;color:var(--gold)">5.0</div>
+        <div style="color:var(--gold);font-size:.9rem;letter-spacing:.15em">★★★★★</div>
+        <div style="font-size:.75rem;color:var(--cream-dim);margin-top:.3rem">Average Rating</div>
+      </div>
+    </div>
+    <div class="rg">
+      <div class="rc"><div class="rst">★★★★★</div><p class="rq">The food is good. No delays. Great customer service — exactly what you want every time you order.</p><div class="rv"><div class="ra">KA</div><div><div class="rn">Kwabena Appiah</div><div style="font-size:.72rem;color:rgba(240,234,214,.4);margin-top:.1rem">Verified Customer</div></div></div></div>
+      <div class="rc"><div class="rst">★★★★★</div><p class="rq">I love the beef sauce with jollof. Delicious. The pizza also tastes great — absolutely no complaints.</p><div class="rv"><div class="ra">RT</div><div><div class="rn">ReignCwei Tetteh</div><div style="font-size:.72rem;color:rgba(240,234,214,.4);margin-top:.1rem">Verified Customer</div></div></div></div>
+      <div class="rc"><div class="rst">★★★★★</div><p class="rq">They have very nice foods. Always fresh, always satisfying. Hunger Station never disappoints.</p><div class="rv"><div class="ra">TR</div><div><div class="rn">Thomas Reed</div><div style="font-size:.72rem;color:rgba(240,234,214,.4);margin-top:.1rem">Verified Customer</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section id="order">
+  <div class="os">
+    <div class="ov"><div class="oc">🛵</div></div>
+    <div>
+      <div class="sl">How It Works</div>
+      <div class="stit">Simple. Fast.<br><em>Reliable.</em></div>
+      <p class="otg">Three steps to premium food at your door.</p>
+      <div class="steps">
+        <div class="step"><div class="sn">01</div><div class="st2"><h4>Choose Your Meal</h4><p>Browse our premium menu and select your favourites.</p></div></div>
+        <div class="step"><div class="sn">02</div><div class="st2"><h4>Place Your Order</h4><p>Call us or reach out via WhatsApp — fast, easy, hassle-free.</p></div></div>
+        <div class="step"><div class="sn">03</div><div class="st2"><h4>Enjoy Premium Food</h4><p>We deliver hot, fresh meals without delay. Every single time.</p></div></div>
+      </div>
+      <a href="#contact" class="bp"><span>🍽 Order Now</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="whs">
+  <div class="wi">
+    <div>
+      <div class="sl">Our Promise</div>
+      <div class="stit">We Don't Just Cook —<br>We Deliver <em>Consistency.</em></div>
+      <ul class="wl">
+        <li class="wli"><span class="wc">✦</span>Fast delivery — no delays, guaranteed</li>
+        <li class="wli"><span class="wc">✦</span>Consistent taste you can count on</li>
+        <li class="wli"><span class="wc">✦</span>Clean, professional service every time</li>
+        <li class="wli"><span class="wc">✦</span>Meals you'll crave again and again</li>
+      </ul>
+    </div>
+    <div class="wns">
+      <div class="wn"><span class="bn">5★</span><span class="bnl">Average Rating</span></div>
+      <div class="wn"><span class="bn">0</span><span class="bnl">Delay Policy</span></div>
+      <div class="wn"><span class="bn">100%</span><span class="bnl">Satisfaction Focus</span></div>
+      <div class="wn"><span class="bn">GH</span><span class="bnl">Proudly Ghanaian</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="cta" id="contact">
+  <div class="cin">
+    <div class="sl" style="justify-content:center"><span style="display:block;width:30px;height:1px;background:var(--gold)"></span>Ready to Eat?<span style="display:block;width:30px;height:1px;background:var(--gold)"></span></div>
+    <h2>Agape High St<br><em>Open 24 hours</em></h2>
+    <p>Fast, premium service with no delays.<br>Contact us anytime at the number below and get meals delivered quickly.</p>
+    <div style="margin:1.5rem 0; line-height:1.6; color:var(--cream-dim); text-align:center;">
+      <strong>Location:</strong> JM9R+VW Ablekuma Fan-Milk<br>
+      <strong>Address:</strong> Agape High St, Accra, Ghana<br>
+      <strong>Open:</strong> 24 hours<br>
+      <strong>Phone:</strong> <a href="tel:+233502816241" style="color:var(--gold);text-decoration:none;">050 281 6241</a><br>
+      <strong>WhatsApp:</strong> <a href="https://wa.me/233502816241" style="color:var(--gold);text-decoration:none;">050 281 6241</a>
+    </div>
+    <div class="ctab">
+      <a href="tel:+233502816241" class="bp"><span>📞 Call</span></a>
+      <a href="https://wa.me/233502816241" class="bco">💬 WhatsApp</a>
+      <a href="https://maps.app.goo.gl/KSNX3onpNBF9ef6N6" class="bco" target="_blank" rel="noreferrer">📍 Open Map</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="flo">Hunger<span> Station Gh</span></div>
+    <div class="fltag">Where Taste Meets Speed.</div>
+  </div>
+  <ul class="fll">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#order">Order</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="fco">© 2025 Hunger Station Gh<br>All rights reserved.</div>
+</footer>
+
+<a href="#contact" class="so">🍽 Order Now</a>
+
+<script>
+const nb=document.getElementById('nb');
+window.addEventListener('scroll',()=>nb.classList.toggle('sc',scrollY>60));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}}));
+const cur=document.createElement('div');
+cur.style.cssText='position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.04)0%,transparent 70%);pointer-events:none;z-index:999;transform:translate(-50%,-50%);transition:left 0.5s ease,top 0.5s ease;';
+document.body.appendChild(cur);
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+</script>
+</body>
+</html>
